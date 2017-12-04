@@ -1,16 +1,6 @@
-# ioc
+'use strict';
 
-
-## Installation
-
-```sh
-npm install --save "@aantthony/ioc"
-```
-
-## Usage
-
-```js
-const ioc = require('@aantthony/ioc');
+const ioc = require('./');
 const createLogger = require('@aantthony/logger');
 
 function createApplication() {
@@ -37,4 +27,3 @@ module.exports = createApplication();
 
 // 2017-12-04 11:15:47 demo: Example = 6
 createApplication().demo.run();
-```

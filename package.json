@@ -18,5 +18,8 @@
   "homepage": "https://github.com/aantthony/ioc#readme",
   "dependencies": {
     "fn-annotate": "^1.2.0"
+  },
+  "devDependencies": {
+    "@aantthony/logger": "^1.1.1"
   }
 }
