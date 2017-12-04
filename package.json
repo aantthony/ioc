@@ -1,0 +1,22 @@
+{
+  "name": "@aantthony/ioc",
+  "version": "1.0.0",
+  "description": "Inversion of control",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo Done"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aantthony/ioc.git"
+  },
+  "author": "Anthony Foster",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/aantthony/ioc/issues"
+  },
+  "homepage": "https://github.com/aantthony/ioc#readme",
+  "dependencies": {
+    "fn-annotate": "^1.2.0"
+  }
+}
