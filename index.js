@@ -33,13 +33,22 @@ function createContainer(factories) {
     });
 
     const instance = Object.create(ctor.prototype || {});
-    const value = ctor.apply(instance, argumentValues) || instance;
+    const functionResult = ctor.apply(instance, argumentValues);
+
+    /*
+      If the function is a constructor (e.g. for use with the 'new' keyword),
+      then returning undefined is expected, and we should use `instance`.
+     */
+    const value = (functionResult === undefined) ? instance : functionResult;
+
     if (!ctor.transient) {
+      // Store the instance
       instantiated[name] = value;
     }
     return value;
   }
 
+  // container: { service1: [getter], service2: [getter], ...  }
   const container = {};
   Object.keys(factories).forEach((key) => {
     Object.defineProperty(container, key, {
