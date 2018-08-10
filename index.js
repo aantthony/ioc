@@ -81,9 +81,9 @@ createContainer.transient = function (fn) {
   return fn;
 };
 
-createContainer.env = function () {
+createContainer.env = function (values) {
   const obj = {};
-  const env = process.env;
+  const env = values || process.env;
   return Object.keys(env).reduce((all, name) => {
     all[name] = () => env[name];
     return all;
