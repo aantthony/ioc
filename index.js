@@ -49,7 +49,11 @@ function createContainer(factories) {
       throw new Error(`There is no definition for "${name}" which is a dependency of ${fromModule.name || '()'}.`);
     }
     const thisModule = { name };
-    const value = evaluateInjectionCall(factories[name], dep => get(dep, thisModule));
+
+    const value = evaluateInjectionCall(factories[name], dep => {
+      if (dep === 'module') return fromModule;
+      return get(dep, thisModule);
+    });
 
     if (!ctor.transient) {
       // Store the instance
