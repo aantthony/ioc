@@ -1,6 +1,6 @@
 {
   "name": "@aantthony/ioc",
-  "version": "2.0.0",
+  "version": "3.0.0",
   "description": "Inversion of control",
   "main": "index.js",
   "scripts": {
